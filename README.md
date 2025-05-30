@@ -1,21 +1,6 @@
 Binary Classification on Iris Dataset Using Logistic Regression
 This project applies Logistic Regression to the classic Iris dataset, converting the multi-class classification problem into a binary classification problem (Iris-setosa vs Non-Setosa). The model is built using scikit-learn and includes data preprocessing, feature selection, regularization, stratified cross-validation, and learning curve visualization.
 
-📁 Project Structure
-bash
-Copy
-Edit
-├── iris_logistic_regression.py   # Main script
-├── Iris.csv                      # Dataset (downloaded separately)
-└── README.md                     # Project documentation
-📌 Objective
-Perform binary classification on the Iris dataset.
-
-Use feature selection to improve model generalization.
-
-Apply regularized Logistic Regression to prevent overfitting.
-
-Visualize the learning curve to assess bias-variance tradeoff.
 
 📊 Dataset
 Source: Iris Dataset - UCI ML Repository
