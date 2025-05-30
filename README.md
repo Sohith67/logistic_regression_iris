@@ -1,58 +1,102 @@
-Logistic Regression Binary Classifier – Iris Dataset 🌸
+Binary Classification on Iris Dataset Using Logistic Regression
+This project applies Logistic Regression to the classic Iris dataset, converting the multi-class classification problem into a binary classification problem (Iris-setosa vs Non-Setosa). The model is built using scikit-learn and includes data preprocessing, feature selection, regularization, stratified cross-validation, and learning curve visualization.
+
+📁 Project Structure
+bash
+Copy
+Edit
+├── iris_logistic_regression.py   # Main script
+├── Iris.csv                      # Dataset (downloaded separately)
+└── README.md                     # Project documentation
 📌 Objective
-This project demonstrates binary classification using Logistic Regression on a subset of the Iris dataset. The goal is to:
+Perform binary classification on the Iris dataset.
 
-Preprocess data
+Use feature selection to improve model generalization.
 
-Train a logistic regression model
+Apply regularized Logistic Regression to prevent overfitting.
 
-Evaluate its performance using standard classification metrics
-
-Visualize the sigmoid function and ROC curve
+Visualize the learning curve to assess bias-variance tradeoff.
 
 📊 Dataset
-Source: Scikit-learn Iris dataset
-We use only two classes (Setosa and Versicolor) from the original dataset to create a binary classification problem.
+Source: Iris Dataset - UCI ML Repository
 
-🧰 Tools & Libraries
+Original Target Classes: Iris-setosa, Iris-versicolor, Iris-virginica
+
+Modified Target:
+
+1 → Iris-setosa
+
+0 → Iris-versicolor or Iris-virginica
+
+🛠️ Tools & Libraries
 Python
-Scikit-learn
-Pandas
-NumPy
-Matplotlib
 
-🧪 Steps Performed
-Data Loading
-Loaded the Iris dataset and filtered it to keep only two classes for binary classification.
+pandas
 
-Train/Test Split
-Split the dataset using train_test_split (70% training, 30% testing).
+numpy
 
-Feature Standardization
-Standardized the features using StandardScaler.
+matplotlib
+
+seaborn
+
+scikit-learn
+
+🧪 Workflow
+Data Loading & Cleaning
+
+Load CSV
+
+Drop ID column
+
+Binary target conversion
+
+Train-Test Split
+
+Stratified 80/20 split to maintain class balance
+
+Feature Selection
+
+SelectKBest using ANOVA F-test (top 2 features)
+
+Preprocessing
+
+StandardScaler for normalization
 
 Model Training
-Trained a LogisticRegression model on the training data.
 
-Evaluation Metrics
+LogisticRegression with:
 
-Confusion Matrix
+C=0.001 for stronger regularization
 
-Precision
+class_weight='balanced'
 
-Recall
+Evaluation
 
-ROC-AUC Score
+Confusion matrix
 
-ROC Curve Plot
+Classification report
 
-Sigmoid Function Visualization
-Plotted the sigmoid curve to demonstrate how logistic regression maps outputs between 0 and 1.
+Stratified 5-fold cross-validation
 
-📈 Results
-The model successfully classified the two Iris species.
+Learning curve plotting
 
-ROC-AUC score and precision/recall metrics provided insight into the model's performance.
+📈 Output Example
+Classification Report:
 
-Sigmoid function and ROC curve were visualized for better conceptual understanding.
+![image](https://github.com/user-attachments/assets/80b187a8-5406-4665-a577-ff71e6a9a0db)
+
+The learning curve shows how training and validation accuracy change with training size — useful to check overfitting/underfitting.
+
+▶️ How to Run
+Clone the repository:
+
+
+git clone https://github.com/yourusername/iris-logistic-regression.git
+cd iris-logistic-regression
+Install dependencies:
+
+
+Run the script:
+
+python iris_logistic_regression.py
 
